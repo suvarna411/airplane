@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class AirPlaneTicket(Document):
+class AirplaneTicketAddonType(Document):
 	pass

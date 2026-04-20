@@ -1,0 +1,11 @@
+<h1>Flight Details</h1>
+
+<p>Airline: {{ frappe.get_doc("Airplane", doc.airplane).airline }}</p>
+<p>{{ doc.source_airport }} → {{ doc.destination_airport }}</p>
+<p>{{ frappe.utils.format_date(doc.date_of_departure) }}</p>
+<p>{{ doc.time_of_departure }}</p>
+<p>{{ frappe.utils.format_duration(doc.duration) }}</p>
+
+<a href="/book-flight/new?flight={{ doc.name }}&flight_price={{ doc.price }}">
+    Book Flight
+</a>

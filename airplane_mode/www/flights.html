@@ -1,0 +1,12 @@
+<h1>Flights</h1>
+
+{% for doc in docs %}
+  <div>
+    <p>{{ doc.source_airport }} → {{ doc.destination_airport }}</p>
+    <p>{{ frappe.utils.format_date(doc.date_of_departure) }}</p>
+    <p>{{ doc.time_of_departure }}</p>
+    <p>{{ frappe.utils.format_duration(doc.duration) }}</p>
+
+    <a href="/{{ doc.route }}">View Flight</a>
+  </div>
+{% endfor %}
