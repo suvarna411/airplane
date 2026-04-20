@@ -2,7 +2,7 @@
  "actions": [],
  "allow_guest_to_view": 1,
  "allow_rename": 1,
- "autoname": "{airplane}-{MM}-{YYYY}-.#####",
+ "autoname": "format: {airplane}-{MM}-{YYYY}-{#####}",
  "creation": "2026-04-18 21:23:59.450344",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -163,11 +163,11 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2026-04-20 00:36:13.648936",
+ "modified": "2026-04-20 11:38:06.671905",
  "modified_by": "Administrator",
  "module": "Airplane",
  "name": "Airplane Flight",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

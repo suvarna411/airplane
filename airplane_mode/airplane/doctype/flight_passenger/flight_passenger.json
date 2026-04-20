@@ -8,8 +8,8 @@
   "passangerdetails_section",
   "first_name",
   "last_name",
-  "date_of_birth",
-  "full_name"
+  "full_name",
+  "date_of_birth"
  ],
  "fields": [
   {
@@ -28,8 +28,7 @@
    "fieldname": "last_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Last Name",
-   "reqd": 1
+   "label": "Last Name"
   },
   {
    "fieldname": "date_of_birth",
@@ -53,7 +52,7 @@
    "link_fieldname": "passenger"
   }
  ],
- "modified": "2026-04-18 19:27:37.980932",
+ "modified": "2026-04-20 11:20:45.043303",
  "modified_by": "Administrator",
  "module": "Airplane",
  "name": "Flight Passenger",
