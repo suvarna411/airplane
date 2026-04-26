@@ -18,6 +18,17 @@ class AirplaneTicket(Document):
     def validate(self):
         self.remove_duplicate_addons()
         self.calculate_total()
+        if self.flight:
+            airplane = frappe.db.get_value("Flight", self.flight, "airplane")
+            capacity = frappe.db.get_value("Airplane", airplane, "capacity")
+
+            count = frappe.db.count("Airplane Ticket", {
+               "flight": self.flight,
+               "docstatus": 1
+              })
+
+            if count >= capacity:
+                frappe.throw("Flight is fully booked!")
 
    
     def before_submit(self):
