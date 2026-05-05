@@ -25,6 +25,7 @@
   "departure_time",
   "column_break_yaro",
   "status",
+  "gate_number",
   "column_break_sayr",
   "duration_of_flight",
   "amended_from"
@@ -173,13 +174,19 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fetch_from": "flight.gate_number",
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-26 17:21:37.495497",
+ "modified": "2026-05-02 11:05:59.970313",
  "modified_by": "Administrator",
  "module": "Airplane",
  "name": "Airplane Ticket",

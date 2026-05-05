@@ -247,33 +247,20 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
-doc_events = {
-"Travel Request1": {
-"on_submit": "airplane_mode.api.create_travel_log"
-}
-}
-fixtures = [
-{
-"doctype": "Custom Field",
-"filters": [
-["dt", "=", "Employee"],
-["fieldname", "in", ["passport_number", "travel_grade"]]
-]
-},
-{
-"doctype": "Property Setter",
-"filters": [
-["doc_type", "=", "Employee"]
-]
-},
-{
-"doctype": "Client Script",
-"filters": [
-["dt", "=", "Travel Request1"]
-]
-}
-]
+
 
 doctype_js = {
     "Airline": "public/js/airline.js"
 }
+scheduler_events = {
+    "monthly": [
+        "airplane_mode.airport_shops.doctype.shop.shop.send_rent_reminders"
+    ]
+}
+fixtures = [
+    {
+        "dt": "Shop Type",
+        "filters": []
+    }
+]
+fixtures = ["Notification"]

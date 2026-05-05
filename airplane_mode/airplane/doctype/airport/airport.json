@@ -7,9 +7,13 @@
  "engine": "InnoDB",
  "field_order": [
   "airport_section",
+  "occupied_shops_column",
   "code",
   "city",
-  "country"
+  "country",
+  "total_shops",
+  "available_shops",
+  "occupied_shops"
  ],
  "fields": [
   {
@@ -37,12 +41,31 @@
    "in_list_view": 1,
    "label": "Country",
    "reqd": 1
+  },
+  {
+   "fieldname": "occupied_shops_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_shops",
+   "fieldtype": "Int",
+   "label": "Total Shops"
+  },
+  {
+   "fieldname": "available_shops",
+   "fieldtype": "Int",
+   "label": "Available Shops"
+  },
+  {
+   "fieldname": "occupied_shops",
+   "fieldtype": "Int",
+   "label": "Occupied Shops"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-26 17:15:58.220538",
+ "modified": "2026-05-02 17:08:56.476525",
  "modified_by": "Administrator",
  "module": "Airplane",
  "name": "Airport",

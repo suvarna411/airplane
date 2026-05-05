@@ -1,0 +1,36 @@
+{
+ "attach_files": "",
+ "attach_print": 0,
+ "channel": "System Notification",
+ "condition": "",
+ "creation": "2026-05-02 00:13:48.849386",
+ "date_changed": "date_of_departure",
+ "days_in_advance": 1,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Airplane Flight",
+ "enabled": 1,
+ "event": "Days Before",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<p>Flight {{ doc.name }} is departing in 24 hours.<br></p>\n",
+ "message_type": "Markdown",
+ "modified": "2026-05-05 13:19:06.744466",
+ "modified_by": "suvarna.tadikamalla@promantia.com",
+ "module": "Airplane",
+ "name": "Flight Departure Notification",
+ "owner": "Administrator",
+ "property_value": "",
+ "recipients": [
+  {
+   "receiver_by_role": "System Manager"
+  },
+  {
+   "receiver_by_role": "Guest"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "set_property_after_alert": "",
+ "subject": "Departs in 24 hours!"
+}

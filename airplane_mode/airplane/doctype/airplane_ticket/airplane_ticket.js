@@ -8,7 +8,12 @@
 // });
 frappe.ui.form.on('Airplane Ticket', {
     refresh: function(frm) {
+
+       
+        frm.clear_custom_buttons();
+
         frm.add_custom_button('Assign Seat', function() {
+
             let d = new frappe.ui.Dialog({
                 title: 'Enter Seat Number',
                 fields: [
@@ -19,12 +24,18 @@ frappe.ui.form.on('Airplane Ticket', {
                         reqd: 1
                     }
                 ],
-                primary_action(label, values) {
+                primary_action(values) {
+
+                    console.log("Seat Entered:", values.seat); // debug
+
                     frm.set_value('seat', values.seat);
+                    frm.refresh_field('seat');
+
                     d.hide();
                 }
             });
+
             d.show();
         });
     }
-});
+});      

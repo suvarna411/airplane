@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/assets/airplane_mode/css/style.css">
+</head>
+<body>
+
+<h1>Shops</h1>
+
+<ul>
+    {% for doc in shops %}
+        <li>
+            <a href="/{{ doc.route }}">
+                {{ doc.shop_name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
