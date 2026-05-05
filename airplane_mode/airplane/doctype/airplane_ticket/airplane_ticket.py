@@ -16,19 +16,28 @@ class AirplaneTicket(Document):
 
    
     def validate(self):
-        self.remove_duplicate_addons()
-        self.calculate_total()
-        if self.flight:
-            airplane = frappe.db.get_value("Flight", self.flight, "airplane")
-            capacity = frappe.db.get_value("Airplane", airplane, "capacity")
+     self.remove_duplicate_addons()
+     self.calculate_total()
 
-            count = frappe.db.count("Airplane Ticket", {
-               "flight": self.flight,
-               "docstatus": 1
-              })
+     if self.flight:
+        airplane = frappe.db.get_value("Airplane Flight", self.flight, "airplane")
 
-            if count >= capacity:
-                frappe.throw("Flight is fully booked!")
+        if not airplane:
+            frappe.throw("No airplane linked to this flight")
+
+        capacity = frappe.db.get_value("Airplane", airplane, "capacity")
+
+        if not capacity:
+            frappe.throw(f"Capacity not set for airplane: {airplane}")
+
+        count = frappe.db.count("Airplane Ticket", {
+            "flight": self.flight,
+            "docstatus": 1
+        })
+
+        if count >= capacity:
+            frappe.throw("Flight is fully booked!")
+
 
    
     def before_submit(self):
@@ -37,9 +46,10 @@ class AirplaneTicket(Document):
 
    
     def calculate_total(self):
-        total_addons = sum(d.amount for d in self.add_ons)
-        self.total_amount = self.flight_price + total_addons
-
+       #total_addons = sum(d.amount for d in self.add_ons)
+       #self.total_amount = self.flight_price + total_addons
+      total_addons = sum(float(d.amount or 0) for d in self.add_ons)
+      self.total_amount = float(self.flight_price or 0) + total_addons
     def remove_duplicate_addons(self):
         unique = []
         seen = set()
@@ -50,3 +60,4 @@ class AirplaneTicket(Document):
                 unique.append(d)
 
         self.add_ons = unique
+

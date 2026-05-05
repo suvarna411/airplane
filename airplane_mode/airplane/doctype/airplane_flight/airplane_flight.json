@@ -22,11 +22,14 @@
   "duration",
   "column_break_cfob",
   "time_of_departure",
+  "gate_number",
   "section_break_ttnr",
   "route",
   "is_published",
   "amended_from",
-  "price"
+  "price",
+  "section_break_fhab",
+  "crew_members"
  ],
  "fields": [
   {
@@ -150,6 +153,21 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Price"
+  },
+  {
+   "fieldname": "section_break_fhab",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "crew_members",
+   "fieldtype": "Table",
+   "label": "Crew Members",
+   "options": "Flight Crew"
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
   }
  ],
  "grid_page_length": 50,
@@ -163,8 +181,8 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2026-04-26 17:19:11.424949",
- "modified_by": "Administrator",
+ "modified": "2026-05-05 12:55:15.447825",
+ "modified_by": "suvarna.tadikamalla@promantia.com",
  "module": "Airplane",
  "name": "Airplane Flight",
  "naming_rule": "Expression (old style)",
